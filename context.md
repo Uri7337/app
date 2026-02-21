@@ -4,7 +4,7 @@
 
 Vytvořit jednoduchou demo aplikaci běžící v Dockeru se standardní třívrstvou architekturou:
 
-* Frontend: React + MUI
+* Frontend: React + MUI (Vite build)
 * Backend: Java Spring Boot (REST API)
 * Databáze: PostgreSQL
 
@@ -23,18 +23,27 @@ Aplikace po spuštění automaticky naplní databázi testovacími daty a fronte
 Komunikace:
 Frontend → HTTP → Backend → JDBC → PostgreSQL
 
+Docker network používá service DNS názvy (např. `backend`, `db`), nikoliv `localhost`.
+
 ---
 
 ## Databáze
 
 Použit PostgreSQL 16 image.
 
-Při prvním startu se spustí init skript:
+Při prvním vytvoření datového volume se spustí init skript:
 
 * vytvoření tabulky `users`
 * vložení testovacích záznamů
 
 Mechanismus: `/docker-entrypoint-initdb.d/init.sql`
+
+Důležité chování:
+
+* init script se provede pouze při prvním vytvoření volume
+* pro reset dat je nutné: `docker compose down -v`
+
+Pro zajištění readiness je použit healthcheck (`pg_isready`), aby backend nestartoval dříve než DB přijímá spojení.
 
 ---
 
@@ -51,8 +60,9 @@ Konfigurace:
 
 * připojení přes environment variables z docker-compose
 * Hibernate bez auto-DDL (schema spravuje SQL init)
+* backend startuje až po healthy DB
 
-Doménový model:
+Doménový model (plánovaný):
 
 * Entity: User (id, name, email)
 * Repository: JpaRepository
@@ -60,12 +70,14 @@ Doménový model:
 
 Docker:
 
-* multi-stage build (Maven → JRE image)
-* výsledný artifact: fat jar
+* build z Dockerfile v `backend/`
+* aplikace dostupná na portu 8080 uvnitř sítě jako `http://backend:8080`
 
 ---
 
 ## Frontend (React + MUI)
+
+Frontend není vytvořen pomocí create-react-app (deprecated), ale pomocí Vite.
 
 Funkce:
 
@@ -76,26 +88,49 @@ Funkce:
 Stack:
 
 * React 18
+* Vite
 * Axios
 * Material UI
 
-Docker:
+API konfigurace:
 
-* build Node image
-* runtime Nginx
-* port 3000 → 80
+Backend URL není napevno v kódu — používá build-time proměnnou:
+
+`VITE_API_URL=http://backend:8080`
+
+Lokálně fallback:
+`http://localhost:8080`
+
+---
+
+## Docker – frontend
+
+Multi-stage build:
+
+1. Node image → Vite build (`dist`)
+2. Nginx → servíruje statický obsah
+
+Mapování portů:
+host `3000` → container `80`
+
+Frontend komunikuje s backendem přes Docker DNS (`backend`), nikoliv localhost.
 
 ---
 
 ## Spuštění
 
-`docker compose up --build`
+První spuštění (nutné pro seed DB):
+
+```
+docker compose down -v
+docker compose up --build
+```
 
 Po startu:
 
-* DB se inicializuje
-* backend se připojí
-* frontend načte data
+1. DB vytvoří schema + data
+2. backend čeká na DB readiness
+3. frontend načte data z API
 
 URL: [http://localhost:3000](http://localhost:3000)
 
@@ -105,7 +140,9 @@ URL: [http://localhost:3000](http://localhost:3000)
 
 Funkční minimální fullstack aplikace:
 
-* seed databáze při startu
+* deterministický seed databáze
 * REST API
-* zobrazení dat ve frontend UI
+* React UI s MUI tabulkou
 * izolace služeb v kontejnerech
+* korektní pořadí startu kontejnerů
+* backend URL konfigurovatelná build-time proměnnou
