@@ -74,3 +74,6 @@ Vše vypadá ok, o projektu vím tak málo, že jsem se zeptal chatgpt jak to ov
 
 + Z logu se tedy dá říct, že problém s JAR je vyřešen a aplikace by měla být funkční.
 ```
+
+## Next step
+po kontrole jsme zjistili, že někde bude zas chyba, frontend nic neukazuje, http://localhost:3000 sice ukáže user list, ale nic v něm není.
