@@ -42,3 +42,10 @@ ještě jsem rozjel gitignore jak jsme udělali build a pak git refresh:
  1649  git commit -m "refresh gitignore"
  1650  clear
 ```
+
+Fixnul jsem docker file:
+```Dockerfile
+COPY --from=build /app/target/demo-0.0.1.jar app.jar
+# -->
+COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
+```
