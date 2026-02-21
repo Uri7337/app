@@ -121,9 +121,10 @@ Frontend komunikuje s backendem přes Docker DNS (`backend`), nikoliv localhost.
 
 První spuštění (nutné pro seed DB):
 
-```
-docker compose down -v
-docker compose up --build
+```sh
+sudo systemctl start docker;
+docker-compose down -v;
+docker-compose up --build;
 ```
 
 Po startu:
