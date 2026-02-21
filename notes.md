@@ -49,3 +49,28 @@ COPY --from=build /app/target/demo-0.0.1.jar app.jar
 # -->
 COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 ```
+
+## Third run
+Vše vypadá ok, o projektu vím tak málo, že jsem se zeptal chatgpt jak to ověřím zda se to o co jsem tak pracně usiloval povedlo xd
+
+```diff
++ Frontend – otevři v prohlížeči:
+
++ http://localhost:3000
+
++ Mělo by se objevit UI s MUI tabulkou a třemi uživateli z init SQL.
+
++ Backend API – můžeš otestovat přímo přes curl nebo prohlížeč:
+
++ http://localhost:3000/api/users
+
++ Vrátí JSON s uživateli. Pokud backend běží na portu 8080, ale frontend je přesměrován přes Nginx, použij frontend proxy (Vite nebo Nginx) → localhost:3000.
+
++ Kontrola kontejnerů
+
++ docker ps
+
++ Měly by běžet: demo-db, demo-backend, demo-frontend.
+
++ Z logu se tedy dá říct, že problém s JAR je vyřešen a aplikace by měla být funkční.
+```
