@@ -32,3 +32,13 @@ spustil jsem build lokálně pro ověření
 mvn clean package -DskipTests
 ```
 **BUILD SUCCESS** - tak uvidíme
+
+ještě jsem rozjel gitignore jak jsme udělali build a pak git refresh:
+```sh
+ 1645  touch .gitignore
+ 1646  git status
+ 1647  git rm -r --cached .
+ 1648  git add .
+ 1649  git commit -m "refresh gitignore"
+ 1650  clear
+```
