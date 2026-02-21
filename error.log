@@ -1,0 +1,222 @@
+docker-compose up --build;
+[+] Running 15/15
+ ✔ db Pulled                                                              42.4s 
+   ✔ 0c8d55a45c0d Pull complete                                           21.1s 
+   ✔ 006e4628b174 Pull complete                                           21.2s 
+   ✔ 672b38b519e3 Pull complete                                           21.2s 
+   ✔ 3e9da9a39d38 Pull complete                                           21.3s 
+   ✔ 11c7e7ae7017 Pull complete                                           21.4s 
+   ✔ 023a0ad09ee9 Pull complete                                           21.4s 
+   ✔ 98b8196d5fac Pull complete                                           21.4s 
+   ✔ 453125fb7241 Pull complete                                           21.4s 
+   ✔ 05469d57f587 Pull complete                                           39.9s 
+   ✔ 4e9ec76c49bc Pull complete                                           39.9s 
+   ✔ 293fe20c06d4 Pull complete                                           39.9s 
+   ✔ ce80fc5ff389 Pull complete                                           39.9s 
+   ✔ 646fe7da0dff Pull complete                                           39.9s 
+   ✔ 4a4ffd5284ad Pull complete                                           39.9s 
+WARN[0042] Docker Compose is configured to build using Bake, but buildx isn't installed 
+[+] Building 115.8s (11/12)                                      docker:default
+ => [backend internal] load build definition from Dockerfile               0.0s
+ => => transferring dockerfile: 283B                                       0.0s
+ => [backend internal] load metadata for docker.io/library/eclipse-temuri  1.9s
+ => [backend internal] load metadata for docker.io/library/maven:3.9-ecli  1.9s
+ => [backend internal] load .dockerignore                                  0.0s
+ => => transferring context: 2B                                            0.0s
+ => [backend build 1/4] FROM docker.io/library/maven:3.9-eclipse-temurin  80.9s
+ => => resolve docker.io/library/maven:3.9-eclipse-temurin-21@sha256:c3c9  0.0s
+ => => sha256:c3c9d3ac4ce8431a3995c0318b8d390f448e693dd4f 6.65kB / 6.65kB  0.0s
+ => => sha256:868b909f8ce74fe7ddc783497c20e0a48df48b9f 22.96MB / 22.96MB  13.9s
+ => => sha256:f12c2f6b47b7df253d03d4086c043b302e87c4 157.87MB / 157.87MB  79.6s
+ => => sha256:be898b0cf3929205778d61b2841aa36733513a79b04 2.91kB / 2.91kB  0.0s
+ => => sha256:dde4eb343a1d41376cb3587b0bcab419c1f967fc1d2 9.83kB / 9.83kB  0.0s
+ => => sha256:01d7766a2e4a62b74e0bebf2cd12c47e675e9221 29.73MB / 29.73MB  27.9s
+ => => sha256:e6b56ff66d06b2f934e91725f7c5fb8077614763b97860 158B / 158B  14.3s
+ => => sha256:c45a8f54c8db9e11d290f2107825fe437f540a499f 2.28kB / 2.28kB  14.7s
+ => => sha256:fb3ce10e989d0cd06874b65b1dda658724422a84 22.54MB / 22.54MB  27.9s
+ => => sha256:f0c7ffc223a983964f2db2dd53152036d70871f230 9.31MB / 9.31MB  31.9s
+ => => sha256:e2ee788762ebb525fd1416be55d22c588dcd94e21e1d62 848B / 848B  28.9s
+ => => extracting sha256:01d7766a2e4a62b74e0bebf2cd12c47e675e9221174f657  85.9s
+ => => extracting sha256:868b909f8ce74fe7ddc783497c20e0a48df48b9f555fc57  85.4s
+ => => sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6 32B / 32B  29.9s
+ => => sha256:d7ab273d6fb9f7364acbe39a9a4c255d5cee98c04b7429 156B / 156B  30.5s
+ => => extracting sha256:f12c2f6b47b7df253d03d4086c043b302e87c4d2b15e486e  0.7s
+ => => extracting sha256:e6b56ff66d06b2f934e91725f7c5fb8077614763b978608b  0.0s
+ => => extracting sha256:c45a8f54c8db9e11d290f2107825fe437f540a499ffbd9b  33.5s
+ => => extracting sha256:fb3ce10e989d0cd06874b65b1dda658724422a842aaada11  0.4s
+ => => extracting sha256:f0c7ffc223a983964f2db2dd53152036d70871f230c7787e  0.0s
+ => => extracting sha256:e2ee788762ebb525fd1416be55d22c588dcd94e21e1d62ff  0.0s
+ => => extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6  0.0s
+ => => extracting sha256:d7ab273d6fb9f7364acbe39a9a4c255d5cee98c04b742971  0.0s
+ => [backend stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jdk@  80.4s
+ => => resolve docker.io/library/eclipse-temurin:21-jdk@sha256:c880d7bdbc  0.0s
+ => => sha256:01d7766a2e4a62b74e0bebf2cd12c47e675e9221 29.73MB / 29.73MB  27.9s
+ => => sha256:868b909f8ce74fe7ddc783497c20e0a48df48b9f 22.96MB / 22.96MB  13.9s
+ => => sha256:f12c2f6b47b7df253d03d4086c043b302e87c4 157.87MB / 157.87MB  79.6s
+ => => sha256:c880d7bdbcab3bb1e82159d5781760832e94b72b65d 7.18kB / 7.18kB  0.0s
+ => => sha256:73f2f275a4da20662fbfc8329b99e3b75095b61fe87 1.94kB / 1.94kB  0.0s
+ => => sha256:eda13497c4deeeb8bfd0fed3385a2fa76d6afaef940 6.20kB / 6.20kB  0.0s
+ => => sha256:e6b56ff66d06b2f934e91725f7c5fb8077614763b97860 158B / 158B  14.3s
+ => => sha256:c45a8f54c8db9e11d290f2107825fe437f540a499f 2.28kB / 2.28kB  14.7s
+ => => extracting sha256:01d7766a2e4a62b74e0bebf2cd12c47e675e9221174f6570  0.4s
+ => => extracting sha256:868b909f8ce74fe7ddc783497c20e0a48df48b9f555fc570  0.3s
+ => => extracting sha256:f12c2f6b47b7df253d03d4086c043b302e87c4d2b15e486e  0.7s
+ => => extracting sha256:e6b56ff66d06b2f934e91725f7c5fb8077614763b978608b  0.0s
+ => => extracting sha256:c45a8f54c8db9e11d290f2107825fe437f540a499ffbd9b6  0.0s
+ => [backend internal] load build context                                  0.2s
+ => => transferring context: 43.85MB                                       0.2s
+ => [backend stage-1 2/3] WORKDIR /app                                     0.2s
+ => [backend build 2/4] WORKDIR /app                                       0.0s
+ => [backend build 3/4] COPY . .                                           0.1s
+ => ERROR [backend build 4/4] RUN mvn clean package -DskipTests           32.8s
+------
+ > [backend build 4/4] RUN mvn clean package -DskipTests:
+0.884 [INFO] Scanning for projects...
+1.018 Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.0.3/spring-boot-starter-parent-4.0.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.0.3/spring-boot-starter-parent-4.0.3.pom (14 kB at 37 kB/s)
+.
+.
+.
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/ws/spring-ws-bom/5.0.0/spring-ws-bom-5.0.0.pom (2.3 kB at 41 kB/s)
+4.589 Downloading from central: https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/2.0.3/testcontainers-bom-2.0.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/testcontainers/testcontainers-bom/2.0.3/testcontainers-bom-2.0.3.pom (12 kB at 240 kB/s)
+4.679 [INFO] 
+4.679 [INFO] --------------------------< com.example:demo >--------------------------
+4.679 [INFO] Building demo 0.0.1-SNAPSHOT
+4.679 [INFO]   from pom.xml
+4.679 [INFO] --------------------------------[ jar ]---------------------------------
+4.681 Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/4.0.3/spring-boot-maven-plugin-4.0.3.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-maven-plugin/4.0.3/spring-boot-maven-plugin-4.0.3.pom (4.0 kB at 85 kB/s)
+.
+.
+.
+25.82 Downloading from central: https://repo.maven.apache.org/maven2/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-jpa-test/4.0.3/spring-boot-jpa-test-4.0.3.jar (9.5 kB at 851 B/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-test/7.0.5/spring-test-7.0.5.jar (1.1 MB at 97 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/hibernate/orm/hibernate-core/7.2.4.Final/hibernate-core-7.2.4.Final.jar (14 MB at 1.1 MB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/projectlombok/lombok/1.18.42/lombok-1.18.42.jar (2.0 MB at 155 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy/1.17.8/byte-buddy-1.17.8.jar (9.0 MB at 652 kB/s)
+28.57 [INFO] 
+28.57 [INFO] --- clean:3.5.0:clean (default-clean) @ demo ---
+28.58 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.pom (13 kB at 225 kB/s)
+28.64 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.jar
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.2/plexus-utils-4.0.2.jar (193 kB at 1.8 MB/s)
+28.77 [INFO] Deleting /app/target
+28.79 [INFO] 
+28.79 [INFO] --- resources:3.3.1:resources (default-resources) @ demo ---
+28.79 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.26/plexus-interpolation-1.26.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-interpolation/1.26/plexus-interpolation-1.26.pom (2.7 kB at 45 kB/s)
+28.85 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/5.1/plexus-5.1.pom
+.
+.
+.
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/3.5.1/plexus-utils-3.5.1.jar (269 kB at 814 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar (587 kB at 1.5 MB/s)
+30.53 [INFO] Copying 1 resource from src/main/resources to target/classes
+30.53 [INFO] Copying 0 resource from src/main/resources to target/classes
+30.53 [INFO] 
+30.53 [INFO] --- compiler:3.14.1:compile (default-compile) @ demo ---
+30.54 Downloading from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.8/asm-9.8.pom
+Downloaded from central: https://repo.maven.apache.org/maven2/org/ow2/asm/asm/9.8/asm-9.8.pom (2.4 kB at 38 kB/s)
+30.60 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-shared-utils/3.4.2/maven-shared-utils-3.4.2.pom
+.
+.
+.
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-api/2.15.0/plexus-compiler-api-2.15.0.jar (29 kB at 191 kB/s)
+31.92 Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-manager/2.15.0/plexus-compiler-manager-2.15.0.jar (5.2 kB at 34 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-xml/3.0.1/plexus-xml-3.0.1.jar (94 kB at 479 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-compiler-javac/2.15.0/plexus-compiler-javac-2.15.0.jar (26 kB at 125 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/qdox/qdox/2.2.0/qdox-2.2.0.jar (353 kB at 841 kB/s)
+32.24 [INFO] Recompiling the module because of changed source code.
+32.24 [INFO] Compiling 4 source files with javac [debug parameters release 17] to target/classes
+32.73 [INFO] Annotation processing is enabled because one or more processors were found
+32.73   on the class path. A future release of javac may disable annotation processing
+32.73   unless at least one processor is specified by name (-processor), or a search
+32.73   path is specified (--processor-path, --processor-module-path), or annotation
+32.73   processing is enabled explicitly (-proc:only, -proc:full).
+32.73   Use -Xlint:-options to suppress this message.
+32.73   Use -proc:none to disable annotation processing.
+32.73 [INFO] -------------------------------------------------------------
+32.73 [ERROR] COMPILATION ERROR : 
+32.73 [INFO] -------------------------------------------------------------
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[1,2] cannot find symbol
+32.73   symbol: class RestController
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[2,2] cannot find symbol
+32.73   symbol: class RequestMapping
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[3,2] cannot find symbol
+32.73   symbol: class CrossOrigin
+32.73 [ERROR] /app/src/main/java/com/example/demo/repository/UserRepository.java:[1,41] cannot find symbol
+32.73   symbol: class JpaRepository
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[1,2] cannot find symbol
+32.73   symbol: class Entity
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[2,2] cannot find symbol
+32.73   symbol: class Table
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[3,2] cannot find symbol
+32.73   symbol: class Getter
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[4,2] cannot find symbol
+32.73   symbol: class Setter
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[13,12] cannot find symbol
+32.73   symbol:   class List
+32.73   location: class UserController
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[12,6] cannot find symbol
+32.73   symbol:   class GetMapping
+32.73   location: class UserController
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[7,6] cannot find symbol
+32.73   symbol:   class Id
+32.73   location: class User
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[8,6] cannot find symbol
+32.73   symbol:   class GeneratedValue
+32.73   location: class User
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[8,32] cannot find symbol
+32.73   symbol:   variable GenerationType
+32.73   location: class User
+32.73 [INFO] 13 errors 
+32.73 [INFO] -------------------------------------------------------------
+32.73 [INFO] ------------------------------------------------------------------------
+32.73 [INFO] BUILD FAILURE
+32.73 [INFO] ------------------------------------------------------------------------
+32.73 [INFO] Total time:  31.873 s
+32.73 [INFO] Finished at: 2026-02-21T21:05:03Z
+32.73 [INFO] ------------------------------------------------------------------------
+32.73 [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.14.1:compile (default-compile) on project demo: Compilation failure: Compilation failure: 
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[1,2] cannot find symbol
+32.73 [ERROR]   symbol: class RestController
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[2,2] cannot find symbol
+32.73 [ERROR]   symbol: class RequestMapping
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[3,2] cannot find symbol
+32.73 [ERROR]   symbol: class CrossOrigin
+32.73 [ERROR] /app/src/main/java/com/example/demo/repository/UserRepository.java:[1,41] cannot find symbol
+32.73 [ERROR]   symbol: class JpaRepository
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[1,2] cannot find symbol
+32.73 [ERROR]   symbol: class Entity
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[2,2] cannot find symbol
+32.73 [ERROR]   symbol: class Table
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[3,2] cannot find symbol
+32.73 [ERROR]   symbol: class Getter
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[4,2] cannot find symbol
+32.73 [ERROR]   symbol: class Setter
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[13,12] cannot find symbol
+32.73 [ERROR]   symbol:   class List
+32.73 [ERROR]   location: class UserController
+32.73 [ERROR] /app/src/main/java/com/example/demo/controller/UserController.java:[12,6] cannot find symbol
+32.73 [ERROR]   symbol:   class GetMapping
+32.73 [ERROR]   location: class UserController
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[7,6] cannot find symbol
+32.73 [ERROR]   symbol:   class Id
+32.73 [ERROR]   location: class User
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[8,6] cannot find symbol
+32.73 [ERROR]   symbol:   class GeneratedValue
+32.73 [ERROR]   location: class User
+32.73 [ERROR] /app/src/main/java/com/example/demo/entity/User.java:[8,32] cannot find symbol
+32.73 [ERROR]   symbol:   variable GenerationType
+32.73 [ERROR]   location: class User
+32.73 [ERROR] -> [Help 1]
+32.73 [ERROR] 
+32.73 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+32.73 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+32.73 [ERROR] 
+32.73 [ERROR] For more information about the errors and possible solutions, please read the following articles:
+32.73 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+------
+failed to solve: process "/bin/sh -c mvn clean package -DskipTests" did not complete successfully: exit code: 1
