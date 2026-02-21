@@ -1,0 +1,23 @@
+uri@uri-IdeaPad-Slim-5-14ABR8:~/Projects/minifullapp/app$ docker-compose down -v
+uri@uri-IdeaPad-Slim-5-14ABR8:~/Projects/minifullapp/app$ docker-compose up --build;
+WARN[0000] Docker Compose is configured to build using Bake, but buildx isn't installed 
+[+] Building 62.1s (12/12) FINISHED                                                                                                                                            docker:default
+ => [backend internal] load build definition from Dockerfile                                                                                                                             0.0s
+ => => transferring dockerfile: 283B                                                                                                                                                     0.0s
+ => [backend internal] load metadata for docker.io/library/maven:3.9-eclipse-temurin-21                                                                                                  1.0s
+ => [backend internal] load metadata for docker.io/library/eclipse-temurin:21-jdk                                                                                                        1.0s
+ => [backend internal] load .dockerignore                                                                                                                                                0.0s
+ => => transferring context: 2B                                                                                                                                                          0.0s
+ => [backend build 1/4] FROM docker.io/library/maven:3.9-eclipse-temurin-21@sha256:c3c9d3ac4ce8431a3995c0318b8d390f448e693dd4fabc16e9b68d2e1f3d7b46                                      0.0s
+ => [backend internal] load build context                                                                                                                                                0.0s
+ => => transferring context: 4.47kB                                                                                                                                                      0.0s
+ => [backend stage-1 1/3] FROM docker.io/library/eclipse-temurin:21-jdk@sha256:c880d7bdbcab3bb1e82159d5781760832e94b72b65dfa1835b4c23b241232b45                                          0.0s
+ => CACHED [backend stage-1 2/3] WORKDIR /app                                                                                                                                            0.0s
+ => CACHED [backend build 2/4] WORKDIR /app                                                                                                                                              0.0s
+ => [backend build 3/4] COPY . .                                                                                                                                                         0.1s
+ => [backend build 4/4] RUN mvn clean package -DskipTests                                                                                                                               61.0s
+ => ERROR [backend stage-1 3/3] COPY --from=build /app/target/demo-0.0.1.jar app.jar                                                                                                     0.0s
+------                                                                                                                                                                                        
+ > [backend stage-1 3/3] COPY --from=build /app/target/demo-0.0.1.jar app.jar:                                                                                                                
+------                                                                                                                                                                                        
+failed to solve: failed to compute cache key: failed to calculate checksum of ref 0b698d2b-ab27-49a4-9b9f-f4b0efeb7ce0::oh99n0zdznyuegsny75j0y43b: "/app/target/demo-0.0.1.jar": not found  
